@@ -1,0 +1,88 @@
+---
+import Layout from "../components/Layout.astro";
+---
+
+<Layout>
+  <section>
+    <h1>hello!</h1>
+    <p>
+      myself
+      <br class="mobile" />
+      sayantan<span class="desktop"> ghosh</span>.
+      <br />
+      <br />
+      a web
+      <br class="mobile" />
+      developer
+      <br />
+      creating
+      <br class="mobile" />
+      minimal, 
+	  <br class="mobile" />
+	  modern,
+      <br class="mobile" />
+      mobile friendly
+      <br />
+      interfaces
+      <br class="mobile" />
+      across the web.
+      <br />
+      <br />
+	  <span class="desktop">tale a look around :)</span>
+      <span class="mobile">explore!</span>
+    </p>
+  </section>
+</Layout>
+
+<style>
+  section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 7rem;
+  }
+  h1 {
+    font-size: 5rem;
+    margin: 0;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: hsl(0, 0%, 55%);
+    line-height: 1.5;
+  }
+  a {
+    color: hsl(0, 0%, 45%);
+    text-decoration: underline;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: inline;
+  }
+  @media screen and (max-width: 720px) {
+    section {
+      height: 80%;
+      margin-left: 3rem;
+      padding: 2rem 0;
+      margin-top: 25%;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 2rem;
+      line-height: normal;
+    }
+    .mobile {
+      display: inline;
+    }
+    .desktop {
+      display: none;
+    }
+  }
+</style>

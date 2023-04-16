@@ -1,0 +1,53 @@
+---
+let path = Astro.url.pathname;
+---
+
+<nav>
+  <a
+    href="/contact"
+    class={path == "/contact" ? "accent underline" : "underline"}>contact</a
+  >
+  <a href="/about" class={path == "/about" ? "accent underline" : "underline"}
+    >about</a
+  >
+  <a href="/works" class={path == "/works" ? "accent underline" : "underline"}
+    >works</a
+  >
+  <a href="/" class={path == "/" ? "accent underline" : "underline"}>home</a>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    position: fixed;
+    width: 100vh;
+    bottom: 0;
+    left: 4rem;
+    transform: rotate(270deg);
+    transform-origin: bottom left;
+    justify-content: center;
+    gap: 3rem;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: hsl(0, 0%, 50%);
+    font-size: 20px;
+  }
+  a::after {
+    background-color: hsl(0, 0%, 50%);
+  }
+  .accent {
+    color: hsl(0, 50%, 50%) !important;
+  }
+  .accent::after {
+    background-color: hsl(0, 50%, 50%) !important;
+  }
+  @media screen and (max-width: 720px) {
+    nav {
+      left: 3rem;
+      bottom: -3rem;
+      gap:4.5rem
+    }
+  }
+</style>

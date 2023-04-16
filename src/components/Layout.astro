@@ -1,0 +1,100 @@
+---
+import { SEO } from "astro-seo";
+import NavigationBar from "./NavigationBar.astro";
+import "../assets/styles/styles.css";
+
+const { customMeta } = Astro.props;
+
+const meta = {
+  title: "sntn.dev - another web developer",
+  description:
+    "a web developer creating minimal, modern, mobile friendly apps and websites.",
+  type: "website",
+  image: "/images/og_img.png",
+  date: "",
+  url: "https://stravo.live/",
+  ...customMeta,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/favicon.ico" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/images/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={meta.title}
+      description={meta.description}
+      openGraph={{
+        basic: {
+          title: meta.title,
+          type: meta.type,
+          image: meta.image,
+          url: meta.url,
+        },
+        optional: {
+          description: meta.description,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: meta.title,
+        description: meta.description,
+        image: meta.image,
+      }}
+      extend={{
+        meta: [
+          {
+            name: "twitter:url",
+            content: meta.url,
+          },
+        ],
+      }}
+    />
+  </head>
+  <body>
+    <NavigationBar />
+    <main>
+      <slot />
+    </main>
+    <style>
+      body {
+        font-family: "Space Grotesk", monospace;
+      }
+      main {
+        height: 100vh;
+        overflow-y: scroll;
+        margin-left: 3rem;
+      }
+    </style>
+  </body>
+</html>
