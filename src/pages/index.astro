@@ -66,16 +66,16 @@ import Layout from "../components/Layout.astro";
   }
   @media screen and (max-width: 720px) {
     section {
-      height: 80%;
+      height: 88%;
       margin-left: 3rem;
       padding: 2rem 0;
-      margin-top: 25%;
+      margin-top: 10%;
     }
     h1 {
-      font-size: 4rem;
+      font-size: clamp(2rem, 17vw, 6rem);
     }
     p {
-      font-size: 2rem;
+      font-size: clamp(1rem, 7.5vw, 4rem);
       line-height: normal;
     }
     .mobile {
