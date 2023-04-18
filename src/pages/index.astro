@@ -3,44 +3,71 @@ import Layout from "../components/Layout.astro";
 ---
 
 <Layout>
-  <section>
-    <h1>hello!</h1>
-    <p>
-      myself
-      <br class="mobile" />
-      sayantan<span class="desktop"> ghosh</span>.
-      <br />
-      <br />
-      a web
-      <br class="mobile" />
-      developer
-      <br />
-      creating
-      <br class="mobile" />
-      minimal, 
-	  <br class="mobile" />
-	  modern,
-      <br class="mobile" />
-      mobile friendly
-      <br />
-      interfaces
-      <br class="mobile" />
-      across the web.
-      <br />
-      <br />
-	  <span class="desktop">tale a look around :)</span>
-      <span class="mobile">explore!</span>
-    </p>
+  <section class="container">
+    <section class="text">
+      <h1>hello!</h1>
+      <p>
+        myself
+        <br class="mobile" />
+        sayantan<span class="desktop"> ghosh</span>.
+        <br />
+        <br />
+        a web
+        <br class="mobile" />
+        developer
+        <br />
+        creating
+        <br class="mobile" />
+        minimal,
+        <br class="mobile" />
+        modern,
+        <br class="mobile" />
+        mobile friendly
+        <br />
+        interfaces
+        <br class="mobile" />
+        across the web.
+        <br />
+        <br />
+        <span class="desktop"
+          >tale a look <a href="/works" class="underline accent">around →</a
+          ></span
+        >
+        <span class="mobile"
+          ><a href="/works" class="underline accent">explore →</a></span
+        >
+      </p>
+    </section>
+    <div class="display image-holder desktop">
+      <img src={"src/assets/images/unboxing.svg"} />
+    </div>
   </section>
 </Layout>
 
 <style>
-  section {
+  .container {
+    display: flex;
+    height: 100%;
+  }
+  .text {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 7rem;
+    flex-basis: 65%;
+  }
+  .image-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    flex-basis: 35%;
+    margin-right: 3rem;
+  }
+  img {
+    width: 100%;
   }
   h1 {
     font-size: 5rem;
@@ -55,8 +82,8 @@ import Layout from "../components/Layout.astro";
     line-height: 1.5;
   }
   a {
-    color: hsl(0, 0%, 45%);
-    text-decoration: underline;
+    color: hsl(0, 0%, 55%);
+    text-decoration: none;
   }
   .mobile {
     display: none;
@@ -64,12 +91,25 @@ import Layout from "../components/Layout.astro";
   .desktop {
     display: inline;
   }
+  .accent {
+    transition: all 150ms ease-in-out;
+  }
+  .accent:hover {
+    color: hsl(0, 50%, 50%) !important;
+    word-spacing: 4.5px;
+    cursor: pointer;
+  }
+  .accent::after {
+    background-color: hsl(0, 50%, 50%) !important;
+    height: 3.5px;
+  }
   @media screen and (max-width: 720px) {
-    section {
+    .text {
       height: 88%;
       margin-left: 3rem;
       padding: 2rem 0;
       margin-top: 10%;
+      flex-basis: 100%;
     }
     h1 {
       font-size: clamp(2rem, 17vw, 6rem);
