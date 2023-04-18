@@ -5,12 +5,12 @@ let path = Astro.url.pathname;
 <nav>
   <a
     href="/contact"
-    class={path == "/contact" ? "accent underline" : "underline"}>contact</a
+    class={path == "/contact/" ? "accent underline" : "underline"}>contact</a
   >
-  <a href="/about" class={path == "/about" ? "accent underline" : "underline"}
+  <a href="/about" class={path == "/about/" ? "accent underline" : "underline"}
     >about</a
   >
-  <a href="/works" class={path == "/works" ? "accent underline" : "underline"}
+  <a href="/works" class={path == "/works/" ? "accent underline" : "underline"}
     >works</a
   >
   <a href="/" class={path == "/" ? "accent underline" : "underline"}>home</a>
